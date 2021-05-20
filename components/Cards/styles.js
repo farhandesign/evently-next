@@ -1,7 +1,7 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { fade, makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-	cardGrid: {
+	cardContainer: {
 		padding: '32px 0',
 		overflow: 'hidden'
 	},
@@ -10,18 +10,21 @@ const useStyles = makeStyles((theme) => ({
 	},
 	card: {
 		maxWidth: 400,
-		margin: '0px auto'
+		margin: '0px auto',
+		boxShadow: 'none'
 	},
+	header: {},
 	cardContent: {
 		minHeight: 72
 	},
+	cardActions: {},
 	media: {
 		height: 0,
 		paddingTop: '56.25%' // 16:9
 	},
 	heart: {
 		'&:hover': {
-			color: theme.palette.secondary.light
+			color: '#0295FF'
 		}
 	},
 	view: {

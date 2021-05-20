@@ -27,9 +27,13 @@ export const lightTheme = createMuiTheme({
 		primary: {
 			main: '#0295FF'
 		},
+		secondary: {
+			main: '#fff'
+		},
 		info: {
 			main: '#A0A8B2'
 		},
+
 		text: {
 			primary: '#363B47',
 			secondary: '#A0A8B2'

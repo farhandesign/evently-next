@@ -32,7 +32,7 @@ const ShareButton = (props) => {
 				<meta property="og:image" content={'url of image'} />
 			</Head>
 
-			<IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+			<IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color="default">
 				<ShareIcon />
 			</IconButton>
 			<Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
