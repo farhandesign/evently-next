@@ -1,13 +1,13 @@
 import React from 'react';
-
+import { Provider } from 'next-auth/client';
 import useDarkMode from 'use-dark-mode';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { darkTheme, lightTheme } from '../src/theme';
-
 import Layout from '../components/Layout';
+import '../styles/main.scss';
 
 export default function MyApp(props) {
 	const { Component, pageProps } = props;
@@ -24,11 +24,12 @@ export default function MyApp(props) {
 	const themeConfig = isDark ? darkTheme : lightTheme;
 
 	return (
-		<React.Fragment>
+		<Provider session={pageProps.session}>
 			<Head>
 				<title>My page</title>
 				<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
 			</Head>
+
 			<ThemeProvider theme={themeConfig}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 				<CssBaseline />
@@ -36,7 +37,7 @@ export default function MyApp(props) {
 					<Component {...pageProps} />
 				</Layout>
 			</ThemeProvider>
-		</React.Fragment>
+		</Provider>
 	);
 }
 

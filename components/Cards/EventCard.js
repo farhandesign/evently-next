@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -26,27 +25,17 @@ const EventCard = (props) => {
 
 	return (
 		<Card className={classes.card}>
+			<CardMedia className={classes.media} image={props.imgSrc} title="Paella dish" />
 			<CardHeader
-				action={
-					<IconButton aria-label="settings">
-						<MoreVertIcon />
-					</IconButton>
-				}
+				className={classes.header}
 				title={props.title}
+				titleTypographyProps={{ variant: 'h6' }}
 				subheader={`${props.date && props.date.slice(0, 10).split('-').reverse().join('-')} at
 						${props.date && props.date.slice(15, 21).split('-').reverse().join('-')}`}
 			/>
 
-			<CardMedia className={classes.media} image={props.imgSrc} title="Paella dish" />
-
-			<CardContent className={classes.cardContent}>
-				<Typography variant="body2" color="textSecondary" component="p">
-					{props.description.slice(0, 80)} ...
-				</Typography>
-			</CardContent>
-
-			<CardActions disableSpacing>
-				<IconButton aria-label="add to favorites">
+			<CardActions disableSpacing className={classes.cardActions}>
+				<IconButton aria-label="add to favorites" color="default">
 					<FavoriteIcon className={classes.heart} />
 				</IconButton>
 
